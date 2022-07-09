@@ -1,0 +1,1433 @@
+TimeQuest Timing Analyzer report for bike
+Wed Jan 09 15:47:42 2019
+Quartus II Version 8.0 Build 215 05/29/2008 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Clocks
+  4. Slow 1200mV 85C Model Fmax Summary
+  5. Slow 1200mV 85C Model Setup Summary
+  6. Slow 1200mV 85C Model Hold Summary
+  7. Slow 1200mV 85C Model Recovery Summary
+  8. Slow 1200mV 85C Model Removal Summary
+  9. Slow 1200mV 85C Model Minimum Pulse Width
+ 10. Setup Times
+ 11. Hold Times
+ 12. Clock to Output Times
+ 13. Minimum Clock to Output Times
+ 14. Slow 1200mV 0C Model Fmax Summary
+ 15. Slow 1200mV 0C Model Setup Summary
+ 16. Slow 1200mV 0C Model Hold Summary
+ 17. Slow 1200mV 0C Model Recovery Summary
+ 18. Slow 1200mV 0C Model Removal Summary
+ 19. Slow 1200mV 0C Model Minimum Pulse Width
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Multicorner Timing Analysis Summary
+ 34. Board Trace Model Assignments
+ 35. Slow Corner Signal Integrity Metrics
+ 36. Fast Corner Signal Integrity Metrics
+ 37. Setup Transfers
+ 38. Hold Transfers
+ 39. Report TCCS
+ 40. Report RSKM
+ 41. Unconstrained Paths
+ 42. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 8.0 Build 215 05/29/2008 SJ Full Version ;
+; Revision Name      ; bike                                             ;
+; Device Family      ; Cyclone III                                      ;
+; Device Name        ; EP3C55F484C8                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Enabled                                          ;
++--------------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                 ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; Clock Name                 ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                        ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; clk                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                        ;
+; div:inst8|clk              ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { div:inst8|clk }              ;
+; fenpin50:inst16|clockout   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fenpin50:inst16|clockout }   ;
+; fenpin1000:inst4|clockout  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fenpin1000:inst4|clockout }  ;
+; fenpin1000:inst15|clockout ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { fenpin1000:inst15|clockout } ;
+; shake:inst27|keyout        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { shake:inst27|keyout }        ;
+; spwn_motor:inst2|out       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { spwn_motor:inst2|out }       ;
+; spwn_motor:inst2|sclk      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { spwn_motor:inst2|sclk }      ;
+; spwn_motor:inst2|sclock    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { spwn_motor:inst2|sclock }    ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                        ;
++------------+-----------------+----------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                 ; Note                                                          ;
++------------+-----------------+----------------------------+---------------------------------------------------------------+
+; 66.93 MHz  ; 66.93 MHz       ; fenpin1000:inst4|clockout  ;                                                               ;
+; 178.03 MHz ; 178.03 MHz      ; fenpin1000:inst15|clockout ;                                                               ;
+; 202.51 MHz ; 202.51 MHz      ; spwn_motor:inst2|sclock    ;                                                               ;
+; 250.06 MHz ; 250.06 MHz      ; spwn_motor:inst2|sclk      ;                                                               ;
+; 278.78 MHz ; 278.78 MHz      ; div:inst8|clk              ;                                                               ;
+; 321.85 MHz ; 321.85 MHz      ; fenpin50:inst16|clockout   ;                                                               ;
+; 371.33 MHz ; 350.02 MHz      ; spwn_motor:inst2|out       ; limit due to minimum period restriction (tmin)                ;
+; 378.21 MHz ; 250.0 MHz       ; clk                        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 439.37 MHz ; 350.02 MHz      ; shake:inst27|keyout        ; limit due to minimum period restriction (tmin)                ;
++------------+-----------------+----------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                   ;
++----------------------------+----------+---------------+
+; Clock                      ; Slack    ; End Point TNS ;
++----------------------------+----------+---------------+
+; fenpin1000:inst15|clockout ; -210.355 ; -3940.437     ;
+; fenpin1000:inst4|clockout  ; -6.971   ; -171.501      ;
+; spwn_motor:inst2|sclock    ; -3.938   ; -79.301       ;
+; spwn_motor:inst2|sclk      ; -3.922   ; -58.187       ;
+; div:inst8|clk              ; -2.587   ; -39.164       ;
+; fenpin50:inst16|clockout   ; -2.107   ; -17.642       ;
+; spwn_motor:inst2|out       ; -1.781   ; -45.439       ;
+; clk                        ; -1.644   ; -15.679       ;
+; shake:inst27|keyout        ; -0.638   ; -1.671        ;
++----------------------------+----------+---------------+
+
+
++-----------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                  ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; spwn_motor:inst2|sclock    ; -4.166 ; -4.166        ;
+; fenpin1000:inst15|clockout ; -3.841 ; -3.841        ;
+; spwn_motor:inst2|sclk      ; -2.973 ; -2.973        ;
+; clk                        ; -2.962 ; -5.899        ;
+; spwn_motor:inst2|out       ; -2.915 ; -48.906       ;
+; div:inst8|clk              ; -2.829 ; -2.829        ;
+; fenpin50:inst16|clockout   ; -2.823 ; -2.823        ;
+; shake:inst27|keyout        ; 0.439  ; 0.000         ;
+; fenpin1000:inst4|clockout  ; 0.449  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width                                                                                   ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock                      ; Clock Edge ; Target              ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clk                        ; Rise       ; clk                 ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[10]     ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[11]     ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[9]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|led       ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[10]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[11]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[12]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[13]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[14]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[15]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[1]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[2]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[3]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[4]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[5]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[6]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[7]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[8]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[9]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[10] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[11] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[12] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[13] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[5]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[6]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[7]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[8]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[9]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|clk       ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[5]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[6]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[5]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[6]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[0]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[1]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[2]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[3]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[4]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[5]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[6]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[0]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[1]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[2]   ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                         ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+; division[*]  ; div:inst8|clk              ; 4.037 ; 4.403 ; Rise       ; div:inst8|clk              ;
+;  division[0] ; div:inst8|clk              ; 3.913 ; 3.991 ; Rise       ; div:inst8|clk              ;
+;  division[1] ; div:inst8|clk              ; 4.037 ; 4.403 ; Rise       ; div:inst8|clk              ;
+; down         ; div:inst8|clk              ; 3.753 ; 3.990 ; Rise       ; div:inst8|clk              ;
+; up           ; div:inst8|clk              ; 4.119 ; 4.317 ; Rise       ; div:inst8|clk              ;
+; gear         ; fenpin1000:inst15|clockout ; 1.864 ; 2.078 ; Rise       ; fenpin1000:inst15|clockout ;
+; rst          ; fenpin1000:inst15|clockout ; 2.301 ; 2.548 ; Rise       ; fenpin1000:inst15|clockout ;
+; dirction     ; spwn_motor:inst2|sclk      ; 4.293 ; 4.500 ; Rise       ; spwn_motor:inst2|sclk      ;
+; reset        ; spwn_motor:inst2|sclock    ; 4.008 ; 4.073 ; Rise       ; spwn_motor:inst2|sclock    ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; division[*]  ; div:inst8|clk              ; -2.001 ; -2.233 ; Rise       ; div:inst8|clk              ;
+;  division[0] ; div:inst8|clk              ; -2.213 ; -2.380 ; Rise       ; div:inst8|clk              ;
+;  division[1] ; div:inst8|clk              ; -2.001 ; -2.233 ; Rise       ; div:inst8|clk              ;
+; down         ; div:inst8|clk              ; -1.656 ; -1.910 ; Rise       ; div:inst8|clk              ;
+; up           ; div:inst8|clk              ; -1.968 ; -2.143 ; Rise       ; div:inst8|clk              ;
+; gear         ; fenpin1000:inst15|clockout ; -1.114 ; -1.333 ; Rise       ; fenpin1000:inst15|clockout ;
+; rst          ; fenpin1000:inst15|clockout ; -1.437 ; -1.694 ; Rise       ; fenpin1000:inst15|clockout ;
+; dirction     ; spwn_motor:inst2|sclk      ; -3.298 ; -3.501 ; Rise       ; spwn_motor:inst2|sclk      ;
+; reset        ; spwn_motor:inst2|sclock    ; -1.356 ; -1.642 ; Rise       ; spwn_motor:inst2|sclock    ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                              ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+; out[*]    ; fenpin1000:inst15|clockout ; 10.000 ; 9.698  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[0]   ; fenpin1000:inst15|clockout ; 10.000 ; 9.698  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[1]   ; fenpin1000:inst15|clockout ; 9.792  ; 9.621  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[2]   ; fenpin1000:inst15|clockout ; 8.945  ; 8.764  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[3]   ; fenpin1000:inst15|clockout ; 9.247  ; 9.015  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[4]   ; fenpin1000:inst15|clockout ; 8.930  ; 8.675  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[5]   ; fenpin1000:inst15|clockout ; 8.279  ; 8.168  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[6]   ; fenpin1000:inst15|clockout ; 8.509  ; 8.335  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[7]   ; fenpin1000:inst15|clockout ; 8.912  ; 8.719  ; Rise       ; fenpin1000:inst15|clockout ;
+; s[*]      ; fenpin1000:inst15|clockout ; 9.563  ; 9.276  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[0]     ; fenpin1000:inst15|clockout ; 9.563  ; 9.276  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[1]     ; fenpin1000:inst15|clockout ; 8.962  ; 8.792  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[2]     ; fenpin1000:inst15|clockout ; 8.632  ; 8.457  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[3]     ; fenpin1000:inst15|clockout ; 9.061  ; 8.835  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[4]     ; fenpin1000:inst15|clockout ; 8.918  ; 8.726  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[5]     ; fenpin1000:inst15|clockout ; 9.359  ; 9.121  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[6]     ; fenpin1000:inst15|clockout ; 9.423  ; 9.179  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[7]     ; fenpin1000:inst15|clockout ; 8.395  ; 8.331  ; Rise       ; fenpin1000:inst15|clockout ;
+; led       ; fenpin1000:inst4|clockout  ; 11.166 ; 10.758 ; Rise       ; fenpin1000:inst4|clockout  ;
+; A         ; spwn_motor:inst2|sclk      ; 9.356  ; 9.096  ; Rise       ; spwn_motor:inst2|sclk      ;
+; B         ; spwn_motor:inst2|sclk      ; 9.825  ; 9.441  ; Rise       ; spwn_motor:inst2|sclk      ;
+; C         ; spwn_motor:inst2|sclk      ; 9.908  ; 9.780  ; Rise       ; spwn_motor:inst2|sclk      ;
+; D         ; spwn_motor:inst2|sclk      ; 11.174 ; 10.760 ; Rise       ; spwn_motor:inst2|sclk      ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                      ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+; out[*]    ; fenpin1000:inst15|clockout ; 8.031  ; 7.925  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[0]   ; fenpin1000:inst15|clockout ; 9.683  ; 9.392  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[1]   ; fenpin1000:inst15|clockout ; 9.482  ; 9.316  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[2]   ; fenpin1000:inst15|clockout ; 8.672  ; 8.498  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[3]   ; fenpin1000:inst15|clockout ; 8.961  ; 8.738  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[4]   ; fenpin1000:inst15|clockout ; 8.657  ; 8.412  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[5]   ; fenpin1000:inst15|clockout ; 8.031  ; 7.925  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[6]   ; fenpin1000:inst15|clockout ; 8.253  ; 8.086  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[7]   ; fenpin1000:inst15|clockout ; 8.639  ; 8.454  ; Rise       ; fenpin1000:inst15|clockout ;
+; s[*]      ; fenpin1000:inst15|clockout ; 8.141  ; 8.079  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[0]     ; fenpin1000:inst15|clockout ; 9.261  ; 8.984  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[1]     ; fenpin1000:inst15|clockout ; 8.685  ; 8.521  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[2]     ; fenpin1000:inst15|clockout ; 8.372  ; 8.203  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[3]     ; fenpin1000:inst15|clockout ; 8.784  ; 8.566  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[4]     ; fenpin1000:inst15|clockout ; 8.646  ; 8.461  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[5]     ; fenpin1000:inst15|clockout ; 9.070  ; 8.841  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[6]     ; fenpin1000:inst15|clockout ; 9.131  ; 8.896  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[7]     ; fenpin1000:inst15|clockout ; 8.141  ; 8.079  ; Rise       ; fenpin1000:inst15|clockout ;
+; led       ; fenpin1000:inst4|clockout  ; 10.801 ; 10.407 ; Rise       ; fenpin1000:inst4|clockout  ;
+; A         ; spwn_motor:inst2|sclk      ; 9.064  ; 8.812  ; Rise       ; spwn_motor:inst2|sclk      ;
+; B         ; spwn_motor:inst2|sclk      ; 9.515  ; 9.144  ; Rise       ; spwn_motor:inst2|sclk      ;
+; C         ; spwn_motor:inst2|sclk      ; 9.594  ; 9.469  ; Rise       ; spwn_motor:inst2|sclk      ;
+; D         ; spwn_motor:inst2|sclk      ; 10.808 ; 10.409 ; Rise       ; spwn_motor:inst2|sclk      ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                         ;
++------------+-----------------+----------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                 ; Note                                                          ;
++------------+-----------------+----------------------------+---------------------------------------------------------------+
+; 74.27 MHz  ; 74.27 MHz       ; fenpin1000:inst4|clockout  ;                                                               ;
+; 188.15 MHz ; 188.15 MHz      ; fenpin1000:inst15|clockout ;                                                               ;
+; 214.96 MHz ; 214.96 MHz      ; spwn_motor:inst2|sclock    ;                                                               ;
+; 262.19 MHz ; 262.19 MHz      ; spwn_motor:inst2|sclk      ;                                                               ;
+; 304.69 MHz ; 304.69 MHz      ; div:inst8|clk              ;                                                               ;
+; 339.79 MHz ; 339.79 MHz      ; fenpin50:inst16|clockout   ;                                                               ;
+; 413.56 MHz ; 250.0 MHz       ; clk                        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 414.08 MHz ; 350.02 MHz      ; spwn_motor:inst2|out       ; limit due to minimum period restriction (tmin)                ;
+; 514.93 MHz ; 350.02 MHz      ; shake:inst27|keyout        ; limit due to minimum period restriction (tmin)                ;
++------------+-----------------+----------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                    ;
++----------------------------+----------+---------------+
+; Clock                      ; Slack    ; End Point TNS ;
++----------------------------+----------+---------------+
+; fenpin1000:inst15|clockout ; -192.213 ; -3600.828     ;
+; fenpin1000:inst4|clockout  ; -6.331   ; -156.241      ;
+; spwn_motor:inst2|sclock    ; -3.652   ; -72.813       ;
+; spwn_motor:inst2|sclk      ; -3.514   ; -52.386       ;
+; div:inst8|clk              ; -2.282   ; -33.973       ;
+; fenpin50:inst16|clockout   ; -1.943   ; -15.572       ;
+; spwn_motor:inst2|out       ; -1.557   ; -39.731       ;
+; clk                        ; -1.418   ; -13.031       ;
+; shake:inst27|keyout        ; -0.471   ; -1.185        ;
++----------------------------+----------+---------------+
+
+
++-----------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                   ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; spwn_motor:inst2|sclock    ; -3.849 ; -3.849        ;
+; fenpin1000:inst15|clockout ; -3.535 ; -3.535        ;
+; clk                        ; -2.740 ; -5.455        ;
+; spwn_motor:inst2|sclk      ; -2.704 ; -2.704        ;
+; spwn_motor:inst2|out       ; -2.682 ; -45.180       ;
+; div:inst8|clk              ; -2.587 ; -2.587        ;
+; fenpin50:inst16|clockout   ; -2.579 ; -2.579        ;
+; fenpin1000:inst4|clockout  ; 0.314  ; 0.000         ;
+; shake:inst27|keyout        ; 0.397  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width                                                                                    ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock                      ; Clock Edge ; Target              ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clk                        ; Rise       ; clk                 ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[10]     ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[11]     ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[9]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[0]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[1]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[2]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[3]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[4]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[5]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[6]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[7]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[8]      ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|led       ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[10]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[11]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[12]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[13]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[14]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[15]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[1]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[2]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[3]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[4]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[5]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[6]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[7]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[8]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[9]    ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[10] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[11] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[12] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[13] ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[5]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[6]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[7]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[8]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[9]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|clk       ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[5]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[6]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[0]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[1]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[2]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[3]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[4]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[5]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[6]  ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[0]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[1]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[2]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[3]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[4]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[5]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[6]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[0]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[1]   ;
+; -1.857 ; 1.000        ; 2.857          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[2]   ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                         ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+; division[*]  ; div:inst8|clk              ; 3.684 ; 3.948 ; Rise       ; div:inst8|clk              ;
+;  division[0] ; div:inst8|clk              ; 3.651 ; 3.501 ; Rise       ; div:inst8|clk              ;
+;  division[1] ; div:inst8|clk              ; 3.684 ; 3.948 ; Rise       ; div:inst8|clk              ;
+; down         ; div:inst8|clk              ; 3.466 ; 3.514 ; Rise       ; div:inst8|clk              ;
+; up           ; div:inst8|clk              ; 3.795 ; 3.818 ; Rise       ; div:inst8|clk              ;
+; gear         ; fenpin1000:inst15|clockout ; 1.724 ; 1.711 ; Rise       ; fenpin1000:inst15|clockout ;
+; rst          ; fenpin1000:inst15|clockout ; 2.128 ; 2.136 ; Rise       ; fenpin1000:inst15|clockout ;
+; dirction     ; spwn_motor:inst2|sclk      ; 4.056 ; 4.054 ; Rise       ; spwn_motor:inst2|sclk      ;
+; reset        ; spwn_motor:inst2|sclock    ; 3.783 ; 3.518 ; Rise       ; spwn_motor:inst2|sclock    ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; division[*]  ; div:inst8|clk              ; -1.841 ; -1.915 ; Rise       ; div:inst8|clk              ;
+;  division[0] ; div:inst8|clk              ; -2.042 ; -2.061 ; Rise       ; div:inst8|clk              ;
+;  division[1] ; div:inst8|clk              ; -1.841 ; -1.915 ; Rise       ; div:inst8|clk              ;
+; down         ; div:inst8|clk              ; -1.516 ; -1.620 ; Rise       ; div:inst8|clk              ;
+; up           ; div:inst8|clk              ; -1.800 ; -1.838 ; Rise       ; div:inst8|clk              ;
+; gear         ; fenpin1000:inst15|clockout ; -1.042 ; -1.049 ; Rise       ; fenpin1000:inst15|clockout ;
+; rst          ; fenpin1000:inst15|clockout ; -1.333 ; -1.377 ; Rise       ; fenpin1000:inst15|clockout ;
+; dirction     ; spwn_motor:inst2|sclk      ; -3.022 ; -3.042 ; Rise       ; spwn_motor:inst2|sclk      ;
+; reset        ; spwn_motor:inst2|sclock    ; -1.258 ; -1.315 ; Rise       ; spwn_motor:inst2|sclock    ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                              ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+; out[*]    ; fenpin1000:inst15|clockout ; 9.534  ; 9.064  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[0]   ; fenpin1000:inst15|clockout ; 9.534  ; 9.064  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[1]   ; fenpin1000:inst15|clockout ; 9.330  ; 8.960  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[2]   ; fenpin1000:inst15|clockout ; 8.517  ; 8.225  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[3]   ; fenpin1000:inst15|clockout ; 8.827  ; 8.411  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[4]   ; fenpin1000:inst15|clockout ; 8.510  ; 8.123  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[5]   ; fenpin1000:inst15|clockout ; 7.867  ; 7.672  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[6]   ; fenpin1000:inst15|clockout ; 8.107  ; 7.808  ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[7]   ; fenpin1000:inst15|clockout ; 8.487  ; 8.172  ; Rise       ; fenpin1000:inst15|clockout ;
+; s[*]      ; fenpin1000:inst15|clockout ; 9.124  ; 8.628  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[0]     ; fenpin1000:inst15|clockout ; 9.124  ; 8.628  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[1]     ; fenpin1000:inst15|clockout ; 8.527  ; 8.244  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[2]     ; fenpin1000:inst15|clockout ; 8.212  ; 7.934  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[3]     ; fenpin1000:inst15|clockout ; 8.619  ; 8.270  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[4]     ; fenpin1000:inst15|clockout ; 8.486  ; 8.188  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[5]     ; fenpin1000:inst15|clockout ; 8.911  ; 8.552  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[6]     ; fenpin1000:inst15|clockout ; 8.975  ; 8.603  ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[7]     ; fenpin1000:inst15|clockout ; 7.974  ; 7.815  ; Rise       ; fenpin1000:inst15|clockout ;
+; led       ; fenpin1000:inst4|clockout  ; 10.618 ; 10.113 ; Rise       ; fenpin1000:inst4|clockout  ;
+; A         ; spwn_motor:inst2|sclk      ; 8.884  ; 8.487  ; Rise       ; spwn_motor:inst2|sclk      ;
+; B         ; spwn_motor:inst2|sclk      ; 9.358  ; 8.771  ; Rise       ; spwn_motor:inst2|sclk      ;
+; C         ; spwn_motor:inst2|sclk      ; 9.453  ; 9.031  ; Rise       ; spwn_motor:inst2|sclk      ;
+; D         ; spwn_motor:inst2|sclk      ; 10.631 ; 10.023 ; Rise       ; spwn_motor:inst2|sclk      ;
++-----------+----------------------------+--------+--------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                     ;
++-----------+----------------------------+--------+-------+------------+----------------------------+
+; Data Port ; Clock Port                 ; Rise   ; Fall  ; Clock Edge ; Clock Reference            ;
++-----------+----------------------------+--------+-------+------------+----------------------------+
+; out[*]    ; fenpin1000:inst15|clockout ; 7.638  ; 7.450 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[0]   ; fenpin1000:inst15|clockout ; 9.236  ; 8.783 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[1]   ; fenpin1000:inst15|clockout ; 9.039  ; 8.683 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[2]   ; fenpin1000:inst15|clockout ; 8.262  ; 7.981 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[3]   ; fenpin1000:inst15|clockout ; 8.560  ; 8.161 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[4]   ; fenpin1000:inst15|clockout ; 8.256  ; 7.883 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[5]   ; fenpin1000:inst15|clockout ; 7.638  ; 7.450 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[6]   ; fenpin1000:inst15|clockout ; 7.868  ; 7.581 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[7]   ; fenpin1000:inst15|clockout ; 8.233  ; 7.930 ; Rise       ; fenpin1000:inst15|clockout ;
+; s[*]      ; fenpin1000:inst15|clockout ; 7.739  ; 7.585 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[0]     ; fenpin1000:inst15|clockout ; 8.842  ; 8.364 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[1]     ; fenpin1000:inst15|clockout ; 8.269  ; 7.996 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[2]     ; fenpin1000:inst15|clockout ; 7.970  ; 7.703 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[3]     ; fenpin1000:inst15|clockout ; 8.361  ; 8.026 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[4]     ; fenpin1000:inst15|clockout ; 8.233  ; 7.946 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[5]     ; fenpin1000:inst15|clockout ; 8.641  ; 8.296 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[6]     ; fenpin1000:inst15|clockout ; 8.702  ; 8.345 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[7]     ; fenpin1000:inst15|clockout ; 7.739  ; 7.585 ; Rise       ; fenpin1000:inst15|clockout ;
+; led       ; fenpin1000:inst4|clockout  ; 10.277 ; 9.791 ; Rise       ; fenpin1000:inst4|clockout  ;
+; A         ; spwn_motor:inst2|sclk      ; 8.613  ; 8.231 ; Rise       ; spwn_motor:inst2|sclk      ;
+; B         ; spwn_motor:inst2|sclk      ; 9.069  ; 8.504 ; Rise       ; spwn_motor:inst2|sclk      ;
+; C         ; spwn_motor:inst2|sclk      ; 9.161  ; 8.754 ; Rise       ; spwn_motor:inst2|sclk      ;
+; D         ; spwn_motor:inst2|sclk      ; 10.290 ; 9.705 ; Rise       ; spwn_motor:inst2|sclk      ;
++-----------+----------------------------+--------+-------+------------+----------------------------+
+
+
++------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                   ;
++----------------------------+---------+---------------+
+; Clock                      ; Slack   ; End Point TNS ;
++----------------------------+---------+---------------+
+; fenpin1000:inst15|clockout ; -90.043 ; -1647.169     ;
+; fenpin1000:inst4|clockout  ; -2.814  ; -56.598       ;
+; spwn_motor:inst2|sclock    ; -1.121  ; -20.113       ;
+; spwn_motor:inst2|sclk      ; -1.105  ; -12.151       ;
+; div:inst8|clk              ; -0.516  ; -5.800        ;
+; fenpin50:inst16|clockout   ; -0.346  ; -1.949        ;
+; spwn_motor:inst2|out       ; -0.195  ; -3.129        ;
+; clk                        ; -0.124  ; -0.402        ;
+; shake:inst27|keyout        ; -0.062  ; -0.121        ;
++----------------------------+---------+---------------+
+
+
++-----------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                   ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; spwn_motor:inst2|sclock    ; -1.883 ; -1.927        ;
+; fenpin1000:inst15|clockout ; -1.751 ; -1.751        ;
+; clk                        ; -1.422 ; -2.830        ;
+; spwn_motor:inst2|sclk      ; -1.374 ; -1.374        ;
+; spwn_motor:inst2|out       ; -1.359 ; -22.698       ;
+; div:inst8|clk              ; -1.302 ; -1.302        ;
+; fenpin50:inst16|clockout   ; -1.295 ; -1.295        ;
+; fenpin1000:inst4|clockout  ; 0.154  ; 0.000         ;
+; shake:inst27|keyout        ; 0.176  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width                                                                                    ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock                      ; Clock Edge ; Target              ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clk                        ; Rise       ; clk                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[0]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[10]     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[11]     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[1]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|N[9]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[0]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[1]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|a[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[0]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[1]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; spwn_motor:inst2|out       ; Rise       ; ctrl:inst|b[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[0]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[1]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[2]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[3]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[4]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[5]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[6]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[7]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|c[8]      ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|led       ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[10]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[11]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[12]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[13]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[14]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[15]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[1]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[2]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[3]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[4]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[5]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[6]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[7]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[8]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|num[9]    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[10] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[11] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[12] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[13] ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[7]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[8]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst4|clockout  ; Rise       ; ctrl:inst|speed[9]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|clk       ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk                        ; Rise       ; div:inst8|count[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst25|b[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[0]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[1]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[2]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[3]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[4]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[5]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode1:inst33|b[6]  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[0]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[1]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[2]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[3]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[4]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[5]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst10|b[6]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[0]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[1]   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; fenpin1000:inst15|clockout ; Rise       ; ecode:inst12|b[2]   ;
++--------+--------------+----------------+-------+------------+----------------------------+------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                         ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+; division[*]  ; div:inst8|clk              ; 1.845 ; 2.429 ; Rise       ; div:inst8|clk              ;
+;  division[0] ; div:inst8|clk              ; 1.683 ; 2.358 ; Rise       ; div:inst8|clk              ;
+;  division[1] ; div:inst8|clk              ; 1.845 ; 2.429 ; Rise       ; div:inst8|clk              ;
+; down         ; div:inst8|clk              ; 1.666 ; 2.314 ; Rise       ; div:inst8|clk              ;
+; up           ; div:inst8|clk              ; 1.820 ; 2.467 ; Rise       ; div:inst8|clk              ;
+; gear         ; fenpin1000:inst15|clockout ; 0.857 ; 1.503 ; Rise       ; fenpin1000:inst15|clockout ;
+; rst          ; fenpin1000:inst15|clockout ; 1.049 ; 1.730 ; Rise       ; fenpin1000:inst15|clockout ;
+; dirction     ; spwn_motor:inst2|sclk      ; 1.909 ; 2.576 ; Rise       ; spwn_motor:inst2|sclk      ;
+; reset        ; spwn_motor:inst2|sclock    ; 1.737 ; 2.481 ; Rise       ; spwn_motor:inst2|sclock    ;
++--------------+----------------------------+-------+-------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port    ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+; division[*]  ; div:inst8|clk              ; -0.917 ; -1.550 ; Rise       ; div:inst8|clk              ;
+;  division[0] ; div:inst8|clk              ; -1.020 ; -1.655 ; Rise       ; div:inst8|clk              ;
+;  division[1] ; div:inst8|clk              ; -0.917 ; -1.550 ; Rise       ; div:inst8|clk              ;
+; down         ; div:inst8|clk              ; -0.804 ; -1.419 ; Rise       ; div:inst8|clk              ;
+; up           ; div:inst8|clk              ; -0.929 ; -1.522 ; Rise       ; div:inst8|clk              ;
+; gear         ; fenpin1000:inst15|clockout ; -0.528 ; -1.164 ; Rise       ; fenpin1000:inst15|clockout ;
+; rst          ; fenpin1000:inst15|clockout ; -0.666 ; -1.342 ; Rise       ; fenpin1000:inst15|clockout ;
+; dirction     ; spwn_motor:inst2|sclk      ; -1.453 ; -2.091 ; Rise       ; spwn_motor:inst2|sclk      ;
+; reset        ; spwn_motor:inst2|sclock    ; -0.662 ; -1.367 ; Rise       ; spwn_motor:inst2|sclock    ;
++--------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                            ;
++-----------+----------------------------+-------+-------+------------+----------------------------+
+; Data Port ; Clock Port                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference            ;
++-----------+----------------------------+-------+-------+------------+----------------------------+
+; out[*]    ; fenpin1000:inst15|clockout ; 4.577 ; 4.755 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[0]   ; fenpin1000:inst15|clockout ; 4.577 ; 4.755 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[1]   ; fenpin1000:inst15|clockout ; 4.499 ; 4.689 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[2]   ; fenpin1000:inst15|clockout ; 4.150 ; 4.289 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[3]   ; fenpin1000:inst15|clockout ; 4.235 ; 4.383 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[4]   ; fenpin1000:inst15|clockout ; 4.107 ; 4.239 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[5]   ; fenpin1000:inst15|clockout ; 3.854 ; 3.965 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[6]   ; fenpin1000:inst15|clockout ; 3.928 ; 4.046 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[7]   ; fenpin1000:inst15|clockout ; 4.097 ; 4.224 ; Rise       ; fenpin1000:inst15|clockout ;
+; s[*]      ; fenpin1000:inst15|clockout ; 4.343 ; 4.492 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[0]     ; fenpin1000:inst15|clockout ; 4.322 ; 4.483 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[1]     ; fenpin1000:inst15|clockout ; 4.151 ; 4.272 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[2]     ; fenpin1000:inst15|clockout ; 3.998 ; 4.127 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[3]     ; fenpin1000:inst15|clockout ; 4.177 ; 4.334 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[4]     ; fenpin1000:inst15|clockout ; 4.129 ; 4.264 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[5]     ; fenpin1000:inst15|clockout ; 4.329 ; 4.490 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[6]     ; fenpin1000:inst15|clockout ; 4.343 ; 4.492 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[7]     ; fenpin1000:inst15|clockout ; 3.922 ; 4.042 ; Rise       ; fenpin1000:inst15|clockout ;
+; led       ; fenpin1000:inst4|clockout  ; 5.061 ; 5.277 ; Rise       ; fenpin1000:inst4|clockout  ;
+; A         ; spwn_motor:inst2|sclk      ; 4.322 ; 4.529 ; Rise       ; spwn_motor:inst2|sclk      ;
+; B         ; spwn_motor:inst2|sclk      ; 4.471 ; 4.673 ; Rise       ; spwn_motor:inst2|sclk      ;
+; C         ; spwn_motor:inst2|sclk      ; 4.562 ; 4.826 ; Rise       ; spwn_motor:inst2|sclk      ;
+; D         ; spwn_motor:inst2|sclk      ; 5.077 ; 5.381 ; Rise       ; spwn_motor:inst2|sclk      ;
++-----------+----------------------------+-------+-------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                    ;
++-----------+----------------------------+-------+-------+------------+----------------------------+
+; Data Port ; Clock Port                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference            ;
++-----------+----------------------------+-------+-------+------------+----------------------------+
+; out[*]    ; fenpin1000:inst15|clockout ; 3.744 ; 3.852 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[0]   ; fenpin1000:inst15|clockout ; 4.439 ; 4.609 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[1]   ; fenpin1000:inst15|clockout ; 4.362 ; 4.545 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[2]   ; fenpin1000:inst15|clockout ; 4.029 ; 4.164 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[3]   ; fenpin1000:inst15|clockout ; 4.111 ; 4.254 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[4]   ; fenpin1000:inst15|clockout ; 3.987 ; 4.115 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[5]   ; fenpin1000:inst15|clockout ; 3.744 ; 3.852 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[6]   ; fenpin1000:inst15|clockout ; 3.816 ; 3.931 ; Rise       ; fenpin1000:inst15|clockout ;
+;  out[7]   ; fenpin1000:inst15|clockout ; 3.978 ; 4.102 ; Rise       ; fenpin1000:inst15|clockout ;
+; s[*]      ; fenpin1000:inst15|clockout ; 3.810 ; 3.926 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[0]     ; fenpin1000:inst15|clockout ; 4.193 ; 4.348 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[1]     ; fenpin1000:inst15|clockout ; 4.030 ; 4.146 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[2]     ; fenpin1000:inst15|clockout ; 3.884 ; 4.010 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[3]     ; fenpin1000:inst15|clockout ; 4.057 ; 4.208 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[4]     ; fenpin1000:inst15|clockout ; 4.010 ; 4.141 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[5]     ; fenpin1000:inst15|clockout ; 4.202 ; 4.358 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[6]     ; fenpin1000:inst15|clockout ; 4.215 ; 4.360 ; Rise       ; fenpin1000:inst15|clockout ;
+;  s[7]     ; fenpin1000:inst15|clockout ; 3.810 ; 3.926 ; Rise       ; fenpin1000:inst15|clockout ;
+; led       ; fenpin1000:inst4|clockout  ; 4.903 ; 5.110 ; Rise       ; fenpin1000:inst4|clockout  ;
+; A         ; spwn_motor:inst2|sclk      ; 4.194 ; 4.393 ; Rise       ; spwn_motor:inst2|sclk      ;
+; B         ; spwn_motor:inst2|sclk      ; 4.338 ; 4.531 ; Rise       ; spwn_motor:inst2|sclk      ;
+; C         ; spwn_motor:inst2|sclk      ; 4.425 ; 4.679 ; Rise       ; spwn_motor:inst2|sclk      ;
+; D         ; spwn_motor:inst2|sclk      ; 4.919 ; 5.211 ; Rise       ; spwn_motor:inst2|sclk      ;
++-----------+----------------------------+-------+-------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                          ;
++-----------------------------+-----------+---------+----------+---------+---------------------+
+; Clock                       ; Setup     ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------------+-----------+---------+----------+---------+---------------------+
+; Worst-case Slack            ; -210.355  ; -4.166  ; 0.0      ; 0.0     ; -3.000              ;
+;  clk                        ; -1.644    ; -2.962  ; N/A      ; N/A     ; N/A                 ;
+;  div:inst8|clk              ; -2.587    ; -2.829  ; N/A      ; N/A     ; N/A                 ;
+;  fenpin1000:inst15|clockout ; -210.355  ; -3.841  ; N/A      ; N/A     ; N/A                 ;
+;  fenpin1000:inst4|clockout  ; -6.971    ; 0.154   ; N/A      ; N/A     ; N/A                 ;
+;  fenpin50:inst16|clockout   ; -2.107    ; -2.823  ; N/A      ; N/A     ; N/A                 ;
+;  shake:inst27|keyout        ; -0.638    ; 0.176   ; N/A      ; N/A     ; N/A                 ;
+;  spwn_motor:inst2|out       ; -1.781    ; -2.915  ; N/A      ; N/A     ; N/A                 ;
+;  spwn_motor:inst2|sclk      ; -3.922    ; -2.973  ; N/A      ; N/A     ; N/A                 ;
+;  spwn_motor:inst2|sclock    ; -3.938    ; -4.166  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS             ; -4369.021 ; -71.437 ; 0.0      ; 0.0     ; N/A                 ;
+;  clk                        ; -15.679   ; -5.899  ; N/A      ; N/A     ; N/A                 ;
+;  div:inst8|clk              ; -39.164   ; -2.829  ; N/A      ; N/A     ; N/A                 ;
+;  fenpin1000:inst15|clockout ; -3940.437 ; -3.841  ; N/A      ; N/A     ; N/A                 ;
+;  fenpin1000:inst4|clockout  ; -171.501  ; 0.000   ; N/A      ; N/A     ; N/A                 ;
+;  fenpin50:inst16|clockout   ; -17.642   ; -2.823  ; N/A      ; N/A     ; N/A                 ;
+;  shake:inst27|keyout        ; -1.671    ; 0.000   ; N/A      ; N/A     ; N/A                 ;
+;  spwn_motor:inst2|out       ; -45.439   ; -48.906 ; N/A      ; N/A     ; N/A                 ;
+;  spwn_motor:inst2|sclk      ; -58.187   ; -2.973  ; N/A      ; N/A     ; N/A                 ;
+;  spwn_motor:inst2|sclock    ; -79.301   ; -4.166  ; N/A      ; N/A     ; N/A                 ;
++-----------------------------+-----------+---------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; led           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; A             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; B             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; C             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; D             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[7]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[6]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[5]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[4]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[3]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[2]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[1]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; out[0]        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[7]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[6]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[5]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[4]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[3]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[2]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[1]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; s[0]          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; led           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; A             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; B             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; C             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; D             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; out[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; out[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; out[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; out[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; out[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; out[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; out[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.35 V              ; -0.00723 V          ; 0.126 V                              ; 0.0114 V                             ; 4.71e-010 s                 ; 4.63e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.35 V             ; -0.00723 V         ; 0.126 V                             ; 0.0114 V                            ; 4.71e-010 s                ; 4.63e-010 s                ; Yes                       ; Yes                       ;
+; out[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; s[7]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; s[6]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; s[5]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; s[4]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; s[3]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; s[2]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.91e-007 V                  ; 2.34 V              ; -0.00809 V          ; 0.14 V                               ; 0.0443 V                             ; 6.89e-010 s                 ; 6.57e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.91e-007 V                 ; 2.34 V             ; -0.00809 V         ; 0.14 V                              ; 0.0443 V                            ; 6.89e-010 s                ; 6.57e-010 s                ; Yes                       ; Yes                       ;
+; s[1]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; s[0]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.84e-007 V                  ; 2.35 V              ; -0.0105 V           ; 0.143 V                              ; 0.0411 V                             ; 4.81e-010 s                 ; 4.81e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.84e-007 V                 ; 2.35 V             ; -0.0105 V          ; 0.143 V                             ; 0.0411 V                            ; 4.81e-010 s                ; 4.81e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.53e-007 V                  ; 2.35 V              ; -0.00333 V          ; 0.096 V                              ; 0.00594 V                            ; 4.5e-010 s                  ; 3.85e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.53e-007 V                 ; 2.35 V             ; -0.00333 V         ; 0.096 V                             ; 0.00594 V                           ; 4.5e-010 s                 ; 3.85e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.51e-007 V                  ; 2.34 V              ; -0.00708 V          ; 0.108 V                              ; 0.0269 V                             ; 6.58e-010 s                 ; 8.21e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.51e-007 V                 ; 2.34 V             ; -0.00708 V         ; 0.108 V                             ; 0.0269 V                            ; 6.58e-010 s                ; 8.21e-010 s                ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; led           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; A             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; B             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; C             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; D             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; out[7]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; out[6]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; out[5]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; out[4]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; out[3]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; out[2]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; out[1]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.72 V              ; -0.04 V             ; 0.163 V                              ; 0.0908 V                             ; 2.71e-010 s                 ; 2.61e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.72 V             ; -0.04 V            ; 0.163 V                             ; 0.0908 V                            ; 2.71e-010 s                ; 2.61e-010 s                ; Yes                       ; Yes                       ;
+; out[0]        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; s[7]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; s[6]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; s[5]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; s[4]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; s[3]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; s[2]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.72e-008 V                  ; 2.71 V              ; -0.0345 V           ; 0.145 V                              ; 0.0672 V                             ; 4.5e-010 s                  ; 4.16e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.72e-008 V                 ; 2.71 V             ; -0.0345 V          ; 0.145 V                             ; 0.0672 V                            ; 4.5e-010 s                 ; 4.16e-010 s                ; No                        ; Yes                       ;
+; s[1]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; s[0]          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.04e-008 V                  ; 2.71 V              ; -0.0353 V           ; 0.171 V                              ; 0.0976 V                             ; 2.73e-010 s                 ; 2.69e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.04e-008 V                 ; 2.71 V             ; -0.0353 V          ; 0.171 V                             ; 0.0976 V                            ; 2.73e-010 s                ; 2.69e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.2e-008 V                   ; 2.74 V              ; -0.061 V            ; 0.159 V                              ; 0.0782 V                             ; 2.7e-010 s                  ; 2.2e-010 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.2e-008 V                  ; 2.74 V             ; -0.061 V           ; 0.159 V                             ; 0.0782 V                            ; 2.7e-010 s                 ; 2.2e-010 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-008 V                  ; 2.7 V               ; -0.0121 V           ; 0.274 V                              ; 0.0336 V                             ; 3.18e-010 s                 ; 4.96e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-008 V                 ; 2.7 V              ; -0.0121 V          ; 0.274 V                             ; 0.0336 V                            ; 3.18e-010 s                ; 4.96e-010 s                ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                  ;
++----------------------------+----------------------------+-----------------------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths              ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+-----------------------+----------+----------+----------+
+; clk                        ; clk                        ; 80                    ; 0        ; 0        ; 0        ;
+; div:inst8|clk              ; clk                        ; 1                     ; 1        ; 0        ; 0        ;
+; fenpin50:inst16|clockout   ; clk                        ; 1                     ; 1        ; 0        ; 0        ;
+; div:inst8|clk              ; div:inst8|clk              ; 299                   ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|sclk      ; div:inst8|clk              ; 1                     ; 1        ; 0        ; 0        ;
+; fenpin50:inst16|clockout   ; fenpin50:inst16|clockout   ; 125                   ; 0        ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; fenpin50:inst16|clockout   ; 1                     ; 1        ; 0        ; 0        ;
+; fenpin1000:inst4|clockout  ; fenpin1000:inst4|clockout  ; 0                     ; 4205     ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; fenpin1000:inst4|clockout  ; 30                    ; 0        ; 0        ; 0        ;
+; shake:inst27|keyout        ; fenpin1000:inst4|clockout  ; 4231                  ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|out       ; fenpin1000:inst4|clockout  ; 7036                  ; 0        ; 9        ; 0        ;
+; fenpin1000:inst4|clockout  ; fenpin1000:inst15|clockout ; > 9223372036854775807 ; 1        ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; fenpin1000:inst15|clockout ; 549                   ; 0        ; 0        ; 0        ;
+; shake:inst27|keyout        ; shake:inst27|keyout        ; 0                     ; 4        ; 0        ; 4        ;
+; fenpin1000:inst4|clockout  ; spwn_motor:inst2|out       ; 18                    ; 18       ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; spwn_motor:inst2|out       ; 30                    ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|out       ; spwn_motor:inst2|out       ; 168                   ; 0        ; 0        ; 0        ;
+; div:inst8|clk              ; spwn_motor:inst2|sclk      ; 44                    ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|sclk      ; spwn_motor:inst2|sclk      ; 309                   ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|sclock    ; spwn_motor:inst2|sclk      ; 65                    ; 1        ; 0        ; 0        ;
+; div:inst8|clk              ; spwn_motor:inst2|sclock    ; 261                   ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|out       ; spwn_motor:inst2|sclock    ; 4                     ; 4        ; 0        ; 0        ;
+; spwn_motor:inst2|sclock    ; spwn_motor:inst2|sclock    ; 483                   ; 0        ; 0        ; 0        ;
++----------------------------+----------------------------+-----------------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                   ;
++----------------------------+----------------------------+-----------------------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths              ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+-----------------------+----------+----------+----------+
+; clk                        ; clk                        ; 80                    ; 0        ; 0        ; 0        ;
+; div:inst8|clk              ; clk                        ; 1                     ; 1        ; 0        ; 0        ;
+; fenpin50:inst16|clockout   ; clk                        ; 1                     ; 1        ; 0        ; 0        ;
+; div:inst8|clk              ; div:inst8|clk              ; 299                   ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|sclk      ; div:inst8|clk              ; 1                     ; 1        ; 0        ; 0        ;
+; fenpin50:inst16|clockout   ; fenpin50:inst16|clockout   ; 125                   ; 0        ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; fenpin50:inst16|clockout   ; 1                     ; 1        ; 0        ; 0        ;
+; fenpin1000:inst4|clockout  ; fenpin1000:inst4|clockout  ; 0                     ; 4205     ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; fenpin1000:inst4|clockout  ; 30                    ; 0        ; 0        ; 0        ;
+; shake:inst27|keyout        ; fenpin1000:inst4|clockout  ; 4231                  ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|out       ; fenpin1000:inst4|clockout  ; 7036                  ; 0        ; 9        ; 0        ;
+; fenpin1000:inst4|clockout  ; fenpin1000:inst15|clockout ; > 9223372036854775807 ; 1        ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; fenpin1000:inst15|clockout ; 549                   ; 0        ; 0        ; 0        ;
+; shake:inst27|keyout        ; shake:inst27|keyout        ; 0                     ; 4        ; 0        ; 4        ;
+; fenpin1000:inst4|clockout  ; spwn_motor:inst2|out       ; 18                    ; 18       ; 0        ; 0        ;
+; fenpin1000:inst15|clockout ; spwn_motor:inst2|out       ; 30                    ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|out       ; spwn_motor:inst2|out       ; 168                   ; 0        ; 0        ; 0        ;
+; div:inst8|clk              ; spwn_motor:inst2|sclk      ; 44                    ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|sclk      ; spwn_motor:inst2|sclk      ; 309                   ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|sclock    ; spwn_motor:inst2|sclk      ; 65                    ; 1        ; 0        ; 0        ;
+; div:inst8|clk              ; spwn_motor:inst2|sclock    ; 261                   ; 0        ; 0        ; 0        ;
+; spwn_motor:inst2|out       ; spwn_motor:inst2|sclock    ; 4                     ; 4        ; 0        ; 0        ;
+; spwn_motor:inst2|sclock    ; spwn_motor:inst2|sclock    ; 483                   ; 0        ; 0        ; 0        ;
++----------------------------+----------------------------+-----------------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 8     ; 8    ;
+; Unconstrained Input Port Paths  ; 114   ; 114  ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 21    ; 21   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 8.0 Build 215 05/29/2008 SJ Full Version
+    Info: Processing started: Wed Jan 09 15:47:33 2019
+Info: Command: quartus_sta bike -c bike
+Info: qsta_default_script.tcl version: #3
+Critical Warning: Synopsys Design Constraints File file not found: 'bike.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name shake:inst27|keyout shake:inst27|keyout
+    Info: create_clock -period 1.000 -name spwn_motor:inst2|out spwn_motor:inst2|out
+    Info: create_clock -period 1.000 -name fenpin1000:inst15|clockout fenpin1000:inst15|clockout
+    Info: create_clock -period 1.000 -name spwn_motor:inst2|sclock spwn_motor:inst2|sclock
+    Info: create_clock -period 1.000 -name fenpin50:inst16|clockout fenpin50:inst16|clockout
+    Info: create_clock -period 1.000 -name spwn_motor:inst2|sclk spwn_motor:inst2|sclk
+    Info: create_clock -period 1.000 -name div:inst8|clk div:inst8|clk
+    Info: create_clock -period 1.000 -name clk clk
+    Info: create_clock -period 1.000 -name fenpin1000:inst4|clockout fenpin1000:inst4|clockout
+Warning: The following clock transfers have no clock uncertainty assignment
+    Warning: From shake:inst27|keyout (Fall) to shake:inst27|keyout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to shake:inst27|keyout (Rise) (setup and hold)
+    Warning: From shake:inst27|keyout (Fall) to shake:inst27|keyout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to shake:inst27|keyout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From clk (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From clk (Rise) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From clk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From clk (Rise) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to clk (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to clk (Rise) (setup and hold)
+    Warning: From clk (Rise) to clk (Rise) (setup and hold)
+    Warning: From shake:inst27|keyout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -210.355
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:  -210.355     -3940.437 fenpin1000:inst15|clockout 
+    Info:    -6.971      -171.501 fenpin1000:inst4|clockout 
+    Info:    -3.938       -79.301 spwn_motor:inst2|sclock 
+    Info:    -3.922       -58.187 spwn_motor:inst2|sclk 
+    Info:    -2.587       -39.164 div:inst8|clk 
+    Info:    -2.107       -17.642 fenpin50:inst16|clockout 
+    Info:    -1.781       -45.439 spwn_motor:inst2|out 
+    Info:    -1.644       -15.679 clk 
+    Info:    -0.638        -1.671 shake:inst27|keyout 
+Info: Worst-case hold slack is -4.166
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -4.166        -4.166 spwn_motor:inst2|sclock 
+    Info:    -3.841        -3.841 fenpin1000:inst15|clockout 
+    Info:    -2.973        -2.973 spwn_motor:inst2|sclk 
+    Info:    -2.962        -5.899 clk 
+    Info:    -2.915       -48.906 spwn_motor:inst2|out 
+    Info:    -2.829        -2.829 div:inst8|clk 
+    Info:    -2.823        -2.823 fenpin50:inst16|clockout 
+    Info:     0.439         0.000 shake:inst27|keyout 
+    Info:     0.449         0.000 fenpin1000:inst4|clockout 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Analyzing Slow 1200mV 0C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: The following clock transfers have no clock uncertainty assignment
+    Warning: From shake:inst27|keyout (Fall) to shake:inst27|keyout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to shake:inst27|keyout (Rise) (setup and hold)
+    Warning: From shake:inst27|keyout (Fall) to shake:inst27|keyout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to shake:inst27|keyout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From clk (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From clk (Rise) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From clk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From clk (Rise) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to clk (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to clk (Rise) (setup and hold)
+    Warning: From clk (Rise) to clk (Rise) (setup and hold)
+    Warning: From shake:inst27|keyout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -192.213
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:  -192.213     -3600.828 fenpin1000:inst15|clockout 
+    Info:    -6.331      -156.241 fenpin1000:inst4|clockout 
+    Info:    -3.652       -72.813 spwn_motor:inst2|sclock 
+    Info:    -3.514       -52.386 spwn_motor:inst2|sclk 
+    Info:    -2.282       -33.973 div:inst8|clk 
+    Info:    -1.943       -15.572 fenpin50:inst16|clockout 
+    Info:    -1.557       -39.731 spwn_motor:inst2|out 
+    Info:    -1.418       -13.031 clk 
+    Info:    -0.471        -1.185 shake:inst27|keyout 
+Info: Worst-case hold slack is -3.849
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -3.849        -3.849 spwn_motor:inst2|sclock 
+    Info:    -3.535        -3.535 fenpin1000:inst15|clockout 
+    Info:    -2.740        -5.455 clk 
+    Info:    -2.704        -2.704 spwn_motor:inst2|sclk 
+    Info:    -2.682       -45.180 spwn_motor:inst2|out 
+    Info:    -2.587        -2.587 div:inst8|clk 
+    Info:    -2.579        -2.579 fenpin50:inst16|clockout 
+    Info:     0.314         0.000 fenpin1000:inst4|clockout 
+    Info:     0.397         0.000 shake:inst27|keyout 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Analyzing Fast 1200mV 0C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: The following clock transfers have no clock uncertainty assignment
+    Warning: From shake:inst27|keyout (Fall) to shake:inst27|keyout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to shake:inst27|keyout (Rise) (setup and hold)
+    Warning: From shake:inst27|keyout (Fall) to shake:inst27|keyout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to shake:inst27|keyout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to spwn_motor:inst2|out (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|out (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst15|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin1000:inst15|clockout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Fall) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclock (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclock (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Fall) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From clk (Rise) to fenpin50:inst16|clockout (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From clk (Rise) to fenpin50:inst16|clockout (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclock (Fall) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to spwn_motor:inst2|sclk (Fall) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|sclk (Fall) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From clk (Rise) to div:inst8|clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From clk (Rise) to div:inst8|clk (Fall) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Rise) to clk (Rise) (setup and hold)
+    Warning: From fenpin50:inst16|clockout (Fall) to clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Rise) to clk (Rise) (setup and hold)
+    Warning: From div:inst8|clk (Fall) to clk (Rise) (setup and hold)
+    Warning: From clk (Rise) to clk (Rise) (setup and hold)
+    Warning: From shake:inst27|keyout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst4|clockout (Rise) (setup and hold)
+    Warning: From spwn_motor:inst2|out (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst15|clockout (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Rise) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+    Warning: From fenpin1000:inst4|clockout (Fall) to fenpin1000:inst4|clockout (Fall) (setup and hold)
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -90.043
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:   -90.043     -1647.169 fenpin1000:inst15|clockout 
+    Info:    -2.814       -56.598 fenpin1000:inst4|clockout 
+    Info:    -1.121       -20.113 spwn_motor:inst2|sclock 
+    Info:    -1.105       -12.151 spwn_motor:inst2|sclk 
+    Info:    -0.516        -5.800 div:inst8|clk 
+    Info:    -0.346        -1.949 fenpin50:inst16|clockout 
+    Info:    -0.195        -3.129 spwn_motor:inst2|out 
+    Info:    -0.124        -0.402 clk 
+    Info:    -0.062        -0.121 shake:inst27|keyout 
+Info: Worst-case hold slack is -1.883
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -1.883        -1.927 spwn_motor:inst2|sclock 
+    Info:    -1.751        -1.751 fenpin1000:inst15|clockout 
+    Info:    -1.422        -2.830 clk 
+    Info:    -1.374        -1.374 spwn_motor:inst2|sclk 
+    Info:    -1.359       -22.698 spwn_motor:inst2|out 
+    Info:    -1.302        -1.302 div:inst8|clk 
+    Info:    -1.295        -1.295 fenpin50:inst16|clockout 
+    Info:     0.154         0.000 fenpin1000:inst4|clockout 
+    Info:     0.176         0.000 shake:inst27|keyout 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 220 warnings
+    Info: Peak virtual memory: 328 megabytes
+    Info: Processing ended: Wed Jan 09 15:47:42 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
+
+

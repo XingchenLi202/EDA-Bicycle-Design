@@ -1,0 +1,13 @@
+
+State Machine - |Block1|spwn_motor:inst2|sta
+Name sta.sta3 sta.sta2 sta.sta1 sta.sta0 
+sta.sta0 0 0 0 0 
+sta.sta1 0 0 1 1 
+sta.sta2 0 1 0 1 
+sta.sta3 1 0 0 1 
+
+State Machine - |Block1|spwn_motor:inst2|state
+Name state.state0 state.state2 state.state1 
+state.state0 0 0 0 
+state.state1 1 0 1 
+state.state2 1 1 0 

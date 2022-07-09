@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Dec 28 09:57:19 2018
+Quartus II Version : 8.0 Build 215 05/29/2008 SJ Full Version
+Revision Name : bike
+Top-level Entity Name : Block1
+Family : Cyclone III
+Total logic elements : 2,815
+    Total combinational functions : 2,815
+    Dedicated logic registers : 227
+Total registers : 227
+Total pins : 25
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

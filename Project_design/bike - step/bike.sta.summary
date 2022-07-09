@@ -1,0 +1,221 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'fenpin1000:inst15|clockout'
+Slack : -210.355
+TNS   : -3940.437
+
+Type  : Slow 1200mV 85C Model Setup 'fenpin1000:inst4|clockout'
+Slack : -6.971
+TNS   : -171.501
+
+Type  : Slow 1200mV 85C Model Setup 'spwn_motor:inst2|sclock'
+Slack : -3.938
+TNS   : -79.301
+
+Type  : Slow 1200mV 85C Model Setup 'spwn_motor:inst2|sclk'
+Slack : -3.922
+TNS   : -58.187
+
+Type  : Slow 1200mV 85C Model Setup 'div:inst8|clk'
+Slack : -2.587
+TNS   : -39.164
+
+Type  : Slow 1200mV 85C Model Setup 'fenpin50:inst16|clockout'
+Slack : -2.107
+TNS   : -17.642
+
+Type  : Slow 1200mV 85C Model Setup 'spwn_motor:inst2|out'
+Slack : -1.781
+TNS   : -45.439
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.644
+TNS   : -15.679
+
+Type  : Slow 1200mV 85C Model Setup 'shake:inst27|keyout'
+Slack : -0.638
+TNS   : -1.671
+
+Type  : Slow 1200mV 85C Model Hold 'spwn_motor:inst2|sclock'
+Slack : -4.166
+TNS   : -4.166
+
+Type  : Slow 1200mV 85C Model Hold 'fenpin1000:inst15|clockout'
+Slack : -3.841
+TNS   : -3.841
+
+Type  : Slow 1200mV 85C Model Hold 'spwn_motor:inst2|sclk'
+Slack : -2.973
+TNS   : -2.973
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : -2.962
+TNS   : -5.899
+
+Type  : Slow 1200mV 85C Model Hold 'spwn_motor:inst2|out'
+Slack : -2.915
+TNS   : -48.906
+
+Type  : Slow 1200mV 85C Model Hold 'div:inst8|clk'
+Slack : -2.829
+TNS   : -2.829
+
+Type  : Slow 1200mV 85C Model Hold 'fenpin50:inst16|clockout'
+Slack : -2.823
+TNS   : -2.823
+
+Type  : Slow 1200mV 85C Model Hold 'shake:inst27|keyout'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'fenpin1000:inst4|clockout'
+Slack : 0.449
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'fenpin1000:inst15|clockout'
+Slack : -192.213
+TNS   : -3600.828
+
+Type  : Slow 1200mV 0C Model Setup 'fenpin1000:inst4|clockout'
+Slack : -6.331
+TNS   : -156.241
+
+Type  : Slow 1200mV 0C Model Setup 'spwn_motor:inst2|sclock'
+Slack : -3.652
+TNS   : -72.813
+
+Type  : Slow 1200mV 0C Model Setup 'spwn_motor:inst2|sclk'
+Slack : -3.514
+TNS   : -52.386
+
+Type  : Slow 1200mV 0C Model Setup 'div:inst8|clk'
+Slack : -2.282
+TNS   : -33.973
+
+Type  : Slow 1200mV 0C Model Setup 'fenpin50:inst16|clockout'
+Slack : -1.943
+TNS   : -15.572
+
+Type  : Slow 1200mV 0C Model Setup 'spwn_motor:inst2|out'
+Slack : -1.557
+TNS   : -39.731
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -1.418
+TNS   : -13.031
+
+Type  : Slow 1200mV 0C Model Setup 'shake:inst27|keyout'
+Slack : -0.471
+TNS   : -1.185
+
+Type  : Slow 1200mV 0C Model Hold 'spwn_motor:inst2|sclock'
+Slack : -3.849
+TNS   : -3.849
+
+Type  : Slow 1200mV 0C Model Hold 'fenpin1000:inst15|clockout'
+Slack : -3.535
+TNS   : -3.535
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : -2.740
+TNS   : -5.455
+
+Type  : Slow 1200mV 0C Model Hold 'spwn_motor:inst2|sclk'
+Slack : -2.704
+TNS   : -2.704
+
+Type  : Slow 1200mV 0C Model Hold 'spwn_motor:inst2|out'
+Slack : -2.682
+TNS   : -45.180
+
+Type  : Slow 1200mV 0C Model Hold 'div:inst8|clk'
+Slack : -2.587
+TNS   : -2.587
+
+Type  : Slow 1200mV 0C Model Hold 'fenpin50:inst16|clockout'
+Slack : -2.579
+TNS   : -2.579
+
+Type  : Slow 1200mV 0C Model Hold 'fenpin1000:inst4|clockout'
+Slack : 0.314
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'shake:inst27|keyout'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'fenpin1000:inst15|clockout'
+Slack : -90.043
+TNS   : -1647.169
+
+Type  : Fast 1200mV 0C Model Setup 'fenpin1000:inst4|clockout'
+Slack : -2.814
+TNS   : -56.598
+
+Type  : Fast 1200mV 0C Model Setup 'spwn_motor:inst2|sclock'
+Slack : -1.121
+TNS   : -20.113
+
+Type  : Fast 1200mV 0C Model Setup 'spwn_motor:inst2|sclk'
+Slack : -1.105
+TNS   : -12.151
+
+Type  : Fast 1200mV 0C Model Setup 'div:inst8|clk'
+Slack : -0.516
+TNS   : -5.800
+
+Type  : Fast 1200mV 0C Model Setup 'fenpin50:inst16|clockout'
+Slack : -0.346
+TNS   : -1.949
+
+Type  : Fast 1200mV 0C Model Setup 'spwn_motor:inst2|out'
+Slack : -0.195
+TNS   : -3.129
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.124
+TNS   : -0.402
+
+Type  : Fast 1200mV 0C Model Setup 'shake:inst27|keyout'
+Slack : -0.062
+TNS   : -0.121
+
+Type  : Fast 1200mV 0C Model Hold 'spwn_motor:inst2|sclock'
+Slack : -1.883
+TNS   : -1.927
+
+Type  : Fast 1200mV 0C Model Hold 'fenpin1000:inst15|clockout'
+Slack : -1.751
+TNS   : -1.751
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : -1.422
+TNS   : -2.830
+
+Type  : Fast 1200mV 0C Model Hold 'spwn_motor:inst2|sclk'
+Slack : -1.374
+TNS   : -1.374
+
+Type  : Fast 1200mV 0C Model Hold 'spwn_motor:inst2|out'
+Slack : -1.359
+TNS   : -22.698
+
+Type  : Fast 1200mV 0C Model Hold 'div:inst8|clk'
+Slack : -1.302
+TNS   : -1.302
+
+Type  : Fast 1200mV 0C Model Hold 'fenpin50:inst16|clockout'
+Slack : -1.295
+TNS   : -1.295
+
+Type  : Fast 1200mV 0C Model Hold 'fenpin1000:inst4|clockout'
+Slack : 0.154
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'shake:inst27|keyout'
+Slack : 0.176
+TNS   : 0.000
+
+------------------------------------------------------------

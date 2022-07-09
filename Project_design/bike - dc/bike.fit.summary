@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Dec 28 09:57:44 2018
+Quartus II Version : 8.0 Build 215 05/29/2008 SJ Full Version
+Revision Name : bike
+Top-level Entity Name : Block1
+Family : Cyclone III
+Device : EP3C55F484C8
+Timing Models : Final
+Total logic elements : 2,816 / 55,856 ( 5 % )
+    Total combinational functions : 2,815 / 55,856 ( 5 % )
+    Dedicated logic registers : 227 / 55,856 ( < 1 % )
+Total registers : 227
+Total pins : 25 / 328 ( 8 % )
+Total virtual pins : 0
+Total memory bits : 0 / 2,396,160 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 312 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

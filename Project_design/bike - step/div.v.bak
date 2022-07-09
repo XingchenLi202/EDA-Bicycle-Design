@@ -1,0 +1,26 @@
+//Filename:div
+//Function:system clock division
+//Date:2010.9.27
+//Description:Cyclone III EP3C16Q240C8
+
+module div(sclk,reset,clk);
+input sclk;
+input reset;
+output clk;
+
+reg [4:0] count;
+reg clk;
+
+always@(posedge sclk)
+    if(count==34/2-1)
+	begin
+	  count<=0;
+	end  
+	   else 
+	   count<=count+5'd1;
+
+always@(posedge sclk)
+    if(count==34/2-1)
+        clk<=~clk;	   
+	   
+endmodule	   

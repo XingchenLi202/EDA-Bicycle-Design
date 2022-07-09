@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="bike">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|ctrl:inst|lpm_mult:Mult1" CBX_FILE_NAME="mult_p011.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei1:inst6|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_4jm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei:inst14|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_nhm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|ctrl:inst|lpm_mult:Mult0" CBX_FILE_NAME="mult_s011.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei1:inst6|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_djm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei1:inst6|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_qhm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei:inst14|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_8jm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei:inst14|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_qhm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei1:inst6|lpm_divide:Div3" CBX_FILE_NAME="lpm_divide_nhm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|fenwei:inst14|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_4jm.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
